@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
     public class AppConfig {
 
-        @Bean(name = "movie1")
+        @Bean(name = "movie2")
         public Movie movie1() {
             return new Movie(actor2());
         }
@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Scope;
         public Actor actor1() {
             return new Actor(30, "Ajay", "not defined");
         }
-    @Bean
+
         public Actor actor2() {
             return new Actor(23, "woe", "not defined");
         }
