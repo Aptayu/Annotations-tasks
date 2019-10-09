@@ -15,5 +15,6 @@ import org.springframework.context.annotation.Scope;
     public BeanLifeCycleDemoBean BLdemobean(){
         return new BeanLifeCycleDemoBean();
     }
+
     }
 

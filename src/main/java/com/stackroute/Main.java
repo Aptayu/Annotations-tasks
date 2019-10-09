@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifeCycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
@@ -18,8 +19,11 @@ public class Main {
         ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
 
         BeanLifeCycleDemoBean BLdemobean = factory.getBean(BeanLifeCycleDemoBean.class);
+        BeanPostProcessorDemo BPostProcessor =new BeanPostProcessorDemo();
         BLdemobean.customInit();
         BLdemobean.customDestroy();
+        BPostProcessor.postProcessBeforeInitialization(BLdemobean,BeanLifeCycleDemoBean.class.toString());
+        BPostProcessor.postProcessAfterInitialization(BLdemobean,BeanLifeCycleDemoBean.class.toString());
 
 
     }
